@@ -1,27 +1,26 @@
-# AngularPwaSwExmaple
+# Tutorial (Paso a paso)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+En este artículo vamos a explicar cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
 
-## Development server
+Primero, creamos nuestro proyecto de angular
+```bash
+ng new angular-pwa-sw-example
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Compilamos el proyecto en modo producción (output: ***/dist***).
 
-## Code scaffolding
+```bash
+ng build --prod
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Levantamos la aplicación con el paquete [http-server](https://www.npmjs.com/package/http-server) de npm con el siguiente comando para que evite cacheo.
 
-## Build
+```bash
+http-server -p 8080 -c-1 dist/angular-pwa-sw-example
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+##### Levantamos nuestra aplicación angular de esta manera porque el servidor de desarrollo de Angular ( `ng serve` ) no permite el uso de Service Workers.
 
-## Running unit tests
+Seguidamente ejecutamos la herramienta **[Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=es)** de Google para hacer la auditoría de nuestra web y saber si cumple los checks necesarios para ser una PWA.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Lighthouse Nueva Aplicación Básica Angular](screenshots/pwa-basic-angular.png)
