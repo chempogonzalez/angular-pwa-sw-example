@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-pwa-sw-exmaple'`, () => {
+  it(`should have as title 'angular-pwa-sw-example'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-pwa-sw-exmaple');
+    expect(app.title).toEqual('angular-pwa-sw-example');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-pwa-sw-exmaple!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-pwa-sw-example!');
   });
 });

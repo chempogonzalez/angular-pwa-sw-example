@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-pwa-sw-exmaple": {
+    "angular-pwa-sw-example": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-pwa-sw-exmaple",
+            "outputPath": "dist/angular-pwa-sw-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              {
+                "glob": "custom-worker.js",
+                "input": "src/",
+                "output": "./"
+              },
+              {
+                "glob": "custom-worker-installer.js",
+                "input": "src/",
+                "output": "./"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -65,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-pwa-sw-exmaple:build"
+            "browserTarget": "angular-pwa-sw-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-pwa-sw-exmaple:build:production"
+              "browserTarget": "angular-pwa-sw-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-pwa-sw-exmaple:build"
+            "browserTarget": "angular-pwa-sw-example:build"
           }
         },
         "test": {
@@ -111,7 +121,7 @@
         }
       }
     },
-    "angular-pwa-sw-exmaple-e2e": {
+    "angular-pwa-sw-example-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -120,11 +130,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-pwa-sw-exmaple:serve"
+            "devServerTarget": "angular-pwa-sw-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-pwa-sw-exmaple:serve:production"
+              "devServerTarget": "angular-pwa-sw-example:serve:production"
             }
           }
         },
@@ -140,5 +150,5 @@
       }
     }
   },
-  "defaultProject": "angular-pwa-sw-exmaple"
+  "defaultProject": "angular-pwa-sw-example"
 }

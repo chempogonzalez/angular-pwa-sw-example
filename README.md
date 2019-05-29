@@ -69,5 +69,30 @@ Como podemos ver, nuestra aplicación ya se considera una PWA y tiene la capacid
 
 Lo único que podemos ver que nos faltaría para cumplir todos y cada uno de los requisitos son:
 - **Redireccionar el tráfico HTTP a HTTPS**: *(Esto lo realizaríamos a nivel de servidor. Al ser una prueba en local falla este punto)*
-- **Proveer un icono especial para apple**:  *Como bien indica, lo más recomendado para iOS sería añadir un apartado especial para el icono cuando es "instalada" en iOS.*
+- **Proveer un icono especial para apple**:  *Como bien indica, lo más recomendado para iOS sería añadir un apartado especial para un icono con un formato específico para cuando es "instalada".*
+
+## 🚀 Service Workers
+Angular por defecto nos genera un service worker basado en el archivo `ngsw-config.json` el cual nos permite realizar:
+- Estrategias de cacheo
+- Estrategias de refresco de caché
+- Capacidad de mostrar la applicación offline
+- Servicios para la comunicación con el Service Worker que nos permite:
+  - Saber si está disponible/instalado
+  - Saber si hay una versión nueva de la aplicación o de algún fichero en caché y permite forzar un reload
+  - Saber si hay alguna notificación push, si el usuario hizo click en la notificación, ...etc
+
+Y todo esto podemos gestionarlo desde cualquier componente ya que son servicios de angular y los podemos inyectar ***(SwUpdate & SwPush)***
+
+\
+Peeeeeero, hay un pequeño problema. Como ya hemos hablado, Angular genera en tiempo de compilación el service worker `ngsw-worker.js` con lo cual, cualquier lógica personalizada que le hayamos aplicado al fichero será eliminada ya que el fichero será sobreescrito.
+
+### **Posibles soluciones**
+Para solventar esto en el caso de que necesitemos una lógica personalizada añadida, hay varias formas de atacar el problema.
+
+- Podemos crear un service worker a parte en otro fichero e inyectarlo en el `index.html` como un service worker normal de cualquier aplicación y en este caso, podríamos tener instalados 2 service workers totalmente separados ***(ngsw-worker.js & custom-logic-worker.js)***
+- Si por el contrario solo queremos añadir lógica personalizada y queremos que exista un solo service worker realizaríamos los siguientes pasos:
+  - Paso 1:
+    - Crear nuevo service worker que será nuestro wrapper para juntar el creado por defecto de angular y el nuestro personalizado.
+    - 
+
 
