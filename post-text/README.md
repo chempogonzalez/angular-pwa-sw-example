@@ -16,23 +16,23 @@ Angular dispone de una herramienta muy potente que nos ayuda a generar component
 
 Seguidamente veremos como de fácil es añadir los archivos y configuraciones necesarias a nuestra app para que finalmente sea considerada una PWA.
 
-## **Let's start!** ✈️
+**Empecemos!** ✈️
 
 
-## Paso 1
+## Paso 1️⃣
 Primero, creamos nuestro proyecto de angular
 ```bash
 ng new angular-pwa-sw-example
 ```
 
 
-## Paso 2
+## Paso 2️⃣
 Compilamos el proyecto en modo producción, ya que vamos a realizar la misma prueba más adelante con la implementación de PWA y será necesario que se realice en modo producción (outputPath: ***/dist***).
 
 ```bash
 ng build --prod
 ```
-## Paso 3
+## Paso 3️⃣
 
 Levantamos la aplicación con el paquete [http-server](https://www.npmjs.com/package/http-server) de npm con el siguiente comando para que evite cacheo.
 
@@ -42,7 +42,7 @@ http-server -p 8080 -c-1 dist/angular-pwa-sw-example
 
 ***Levantamos nuestra aplicación de esta manera porque el servidor de desarrollo de Angular ( `ng serve` ) no permite el uso de Service Workers. Así podemos realizar más tarde la comparativa del antes y el después en las mismas condiciones.***
 
-## Paso 4
+## Paso 4️⃣
 Seguidamente ejecutamos la herramienta [Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=es) de Google para hacer la auditoría de nuestra web y saber si cumple los checks necesarios para ser una PWA.
 
 ![Lighthouse-Nueva Aplicación Básica Angular Resultados](../screenshots/pwa-basic-angular.png)
@@ -50,7 +50,7 @@ Seguidamente ejecutamos la herramienta [Lighthouse](https://developers.google.co
 
 Como podemos ver, nuestra aplicación no se puede considerar una PWA según los criterios de Lighthouse porque aún no tenemos ninguna implementación *(manifest, service workers, offline display, ...)* para que lo sea realmente.
 
-## Paso 5
+## Paso 5️⃣
 Con la ayuda de `@angular/cli` vamos a añadir las características de una pwa a nuestra aplicación fácilmente.
 
 Ejecutamos en la raiz de nuestro proyecto angular:
@@ -77,7 +77,7 @@ Automáticamente nos va a añadir una serie de nuevos archivos y va a añadir al
 - **app.module.ts:** registra e instala el service worker `ngsw-worker.js` *(auto generado por angular basado en ngsw-config.json)*
 - **icons**: iconos en diferentes tamaños para usarse como icono de aplicación cuando se instale en algún dispositivo
 
-## Paso 6
+## Paso 6️⃣
 Ejecutamos de nuevo Lighthouse para volver a auditar nuestra aplicación y ver qué ha cambiado.
 
 ![Lighthouse-Despues de añadir @angular/pwa](../screenshots/lighthouse-after-add-pwa.png)
