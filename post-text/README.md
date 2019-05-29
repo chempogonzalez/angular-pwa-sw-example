@@ -1,14 +1,14 @@
 (ES) Idioma: Español
-# Convierte tu aplicación Angular en PWA
+# Convierte tu aplicación Angular 🅰️ en PWA ⚡
 
 En estos tiempos en los que las PWA están cogiendo cada vez más protagonismo y nos aportan cada día más funcionalidades, vamos a ver como Angular nos permite implementar el modelo `Progressive Web Application (PWA)` a nuestra aplicación y transformarla en una de ellas fácilmente.
 
 
-## ¿Qué es Angular?
+## ¿Qué es Angular? 🅰️
 
 `Angular` es un *framework* de desarrollo para JavaScript creado por Google *(se desarrolla en Typescript)*. La finalidad de Angular es facilitarnos el desarrollo de aplicaciones web SPA y además, facilitarnos una serie de herramientas para trabajar con los elementos de una web de una manera más sencilla y óptima.
 
-## ¿Cómo nos ayuda Angular en la creación de una PWA?
+## ¿Cómo nos ayuda Angular en la creación de una PWA? 🤳
 
 Angular dispone de una herramienta muy potente que nos ayuda a generar componentes, clases, interfaces, pipes, directivas,...etc. Esta herramienta es:  [@angular/cli](https://cli.angular.io/).
 
