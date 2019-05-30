@@ -61,6 +61,9 @@ export class PrettyBannerComponent implements OnInit {
     }
   }
 
+  /**
+   * @description Change the host class value to animate it with a fadeOutDown
+   */
   closeBanner(){
     this.hostClass = 'animated fadeOutDown';
   }
