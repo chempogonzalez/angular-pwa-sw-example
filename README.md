@@ -114,7 +114,7 @@ Para solventar esto en el caso de que necesitemos una lógica personalizada aña
     - Usar en nuestro `custom-worker.js` el método `importScripts()`, el cual nos sirve para añadir de manera síncrona uno o varios scripts dentro de nuestro worker scope.
     - De esta manera, añadimos con importScripts() el sw de angular **ngsw-worker.js.** Así podemos tener en nuestro `custom-worker.js` todo el script que Angular nos autogenera y a parte añadir nuestra lógica personalizada.
   - Paso 3️⃣
-    - Registrar en app.module.ts nuestro `custom-worker.js` en vez de el auto-generado por angular.
+    - Registrar en app.module.ts nuestro `custom-worker.js` en vez del auto-generado por angular.
   - Paso 4️⃣
     - Cambiar la configuración de nuestro angular.json para que al compilar nos añada en la carpeta dist nuestro `custom-worker.js` a nivel raiz.
     
