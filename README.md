@@ -1,6 +1,10 @@
+(ES) Idioma: Español
+
 # Tutorial (Paso a paso)
 
 En este tutorial voy a explicar cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
+
+La aplicación del repositorio contiene un ejemplo con todo lo nombrado en el tutorial y a parte un componente personalizado para poder mostrar al usuario la oportunidad de instalar la aplicación.
 
 ## Paso 1
 Primero, creamos nuestro proyecto de angular
@@ -71,7 +75,8 @@ Lo único que podemos ver que nos faltaría para cumplir todos y cada uno de los
 - **Redireccionar el tráfico HTTP a HTTPS**: *(Esto lo realizaríamos a nivel de servidor. Al ser una prueba en local falla este punto)*
 - **Proveer un icono especial para apple**:  *Como bien indica, lo más recomendado para iOS sería añadir un apartado especial para un icono con un formato específico para cuando es "instalada".*
 
-## 🚀 Service Workers
+
+## 🚀 Service Workers personalizados
 Angular por defecto nos genera un service worker basado en el archivo `ngsw-config.json` el cual nos permite realizar:
 - Estrategias de cacheo
 - Estrategias de refresco de caché
@@ -87,12 +92,21 @@ Y todo esto podemos gestionarlo desde cualquier componente ya que son servicios 
 Peeeeeero, hay un pequeño problema. Como ya hemos hablado, Angular genera en tiempo de compilación el service worker `ngsw-worker.js` con lo cual, cualquier lógica personalizada que le hayamos aplicado al fichero será eliminada ya que el fichero será sobreescrito.
 
 ### **Posibles soluciones**
-Para solventar esto en el caso de que necesitemos una lógica personalizada añadida, hay varias formas de atacar el problema.
+Para solventar esto en el caso de que necesitemos una lógica personalizada añadida, hay alguna que otra posible solución:
 
-- Podemos crear un service worker a parte en otro fichero e inyectarlo en el `index.html` como un service worker normal de cualquier aplicación y en este caso, podríamos tener instalados 2 service workers totalmente separados ***(ngsw-worker.js & custom-logic-worker.js)***
-- Si por el contrario solo queremos añadir lógica personalizada y queremos que exista un solo service worker realizaríamos los siguientes pasos:
+- Podemos crear un service worker a parte en otro fichero e inyectarlo en el `index.html` como un service worker normal de cualquier aplicación y en este caso, podríamos tener instalados 2 service workers totalmente separados ***(ngsw-worker.js & custom-logic-worker.js).*** Pero el problema con esta solución y angular es que para tener 2 service workers necesitamos que actuen en diferente scope y tendríamos que crearnos una estructura basada en carpetas, lazy-loading en el proyecto y todo lo necesario para que en la carpeta dist haya un scope diferente para cada pagina y su service worker.
+#### Solución sugerida
+- Si por el contrario queremos tener toda la potencia y opciones que ya nos aporta angular service worker y a parte añadir una lógica personalizada tendríamos que realizar:
   - Paso 1:
-    - Crear nuevo service worker que será nuestro wrapper para juntar el creado por defecto de angular y el nuestro personalizado.
-    - 
+    - Crear nuevo service worker que será nuestro wrapper para juntar el creado por defecto de angular y el nuestro personalizado o nuestra lógica personalizada. ***(custom-worker.js)***
+    
+  - Paso 2:
+    - Usar en nuestro `custom-worker.js` el método `importScripts()`, el cual nos sirve para añadir de manera síncrona uno o varios scripts dentro de nuestro worker scope.
+    - De esta manera, añadimos con importScripts() el sw de angular **ngsw-worker.js.** Así podemos tener en nuestro `custom-worker.js` todo el script que Angular nos autogenera y a parte añadir nuestra lógica personalizada.
+  - Paso 3:
+    - Registrar en app.module.ts nuestro `custom-worker.js` en vez de el auto-generado por angular.
+  - Paso 4:
+    - Cambiar la configuración de nuestro angular.json para que al compilar nos añada en la carpeta dist nuestro `custom-worker.js` a nivel raiz.
+    
 
 
