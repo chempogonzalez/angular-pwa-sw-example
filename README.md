@@ -6,16 +6,19 @@ En este tutorial vamos a ver cómo realizar con Angular una **`PWA`** e implemen
 
 La aplicación del repositorio **contiene un ejemplo** con todo lo nombrado en el tutorial y a parte un **componente personalizado para poder mostrar al usuario la oportunidad de instalar la aplicación.**
 
-Para probar el ejemplo simplemente tenemos que clonar el repositorio y ejecutar los siguientes comandos
+Para probar el ejemplo simplemente tenemos que clonar el repositorio y ejecutar los siguientes comandos en la raiz del proyecto
 ```sh
-#Instalar herramienta Angular cli de manera global
+# Instalar herramienta Angular cli de manera global
 npm install -g @angular/cli 
-#Instalar Http-Server para levantar nuestra aplicación en local
+
+# Instalar Http-Server para levantar nuestra aplicación en local
 npm install -g http-server 
-#Instalar todas las dependencias del proyecto
+
+# Instalar todas las dependencias del proyecto
 npm install
-#Compilar en modo producción el proyecto y levantar el servidor
-#en 'localhost:8080'
+
+# Compilar en modo producción el proyecto y levantar el servidor
+# en 'localhost:8080'
 npm run start:pwa
 ```
 
