@@ -2,7 +2,7 @@
 
 # Convierte tu aplicación Angular 🅰️ en una PWA ⚡
 
-En este tutorial vamos a ve cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
+En este tutorial vamos a ver cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
 
 La aplicación del repositorio **contiene un ejemplo** con todo lo nombrado en el tutorial y a parte un **componente personalizado para poder mostrar al usuario la oportunidad de instalar la aplicación.**
 
