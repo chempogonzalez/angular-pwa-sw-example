@@ -1,6 +1,6 @@
 # Tutorial (Paso a paso)
 
-En este artículo vamos a explicar cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
+En este tutorial voy a explicar cómo realizar con Angular una **`PWA`** e implementar diferentes **`Service Workers con la lógica personalizada que necesitemos`**.
 
 ## Paso 1
 Primero, creamos nuestro proyecto de angular

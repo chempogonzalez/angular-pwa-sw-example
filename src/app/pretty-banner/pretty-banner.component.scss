@@ -1,0 +1,29 @@
+:host{
+  display: block;
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
+  font-size: 1.6rem;
+  padding: 2rem 4rem;
+  box-shadow: 0 0 .9rem 0 #b7b7b7;
+  border-radius: .2rem;
+  
+  .p-button{
+    margin-left: 2rem;
+    border-radius: .2rem;
+    padding: 2rem 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #c6462e;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .custom-error{
+    max-width: 18rem;
+    font-size: 1.4rem;
+    color: #c6462e;
+  }
+}
+

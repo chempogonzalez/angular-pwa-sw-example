@@ -30,11 +30,6 @@
                 "glob": "custom-worker.js",
                 "input": "src/",
                 "output": "./"
-              },
-              {
-                "glob": "custom-worker-installer.js",
-                "input": "src/",
-                "output": "./"
               }
             ],
             "styles": [

@@ -1,0 +1,9 @@
+<span> Add to <strong>My Applications</strong></span>
+<button 
+    class="p-button" 
+    (click)="installApp()"
+>Add</button>
+
+<p *ngIf="customError"
+    class="animated fadeInRight custom-error"
+>{{customError}}</p>

@@ -1,5 +1,5 @@
 (ES) Idioma: Español
-# Convierte tu aplicación Angular 🅰️ en PWA ⚡
+# Convierte tu aplicación Angular 🅰️ en una PWA ⚡
 
 En estos tiempos en los que las PWA están cogiendo cada vez más protagonismo y nos aportan cada día más funcionalidades, vamos a ver como Angular nos permite implementar el modelo `Progressive Web Application (PWA)` a nuestra aplicación y transformarla en una de ellas fácilmente.
 
