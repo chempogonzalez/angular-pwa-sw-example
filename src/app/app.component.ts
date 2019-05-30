@@ -26,10 +26,7 @@ export class AppComponent implements OnInit{
    * @param installed event from app-pretty-banner
    */
   userInteraction(installed) {
-    if (installed) {
-      this.displayPrettyBanner = false;
-    } else {
-      this.displayPrettyBanner = true;
-    }
+    // Display banner if it is not installed
+    this.displayPrettyBanner = !installed;
   }
 }

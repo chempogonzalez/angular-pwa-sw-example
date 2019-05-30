@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:prod": "rm -r ./dist && ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa-sw-example"
+    "start:prod": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa-sw-example"
   },
   "private": true,
   "dependencies": {

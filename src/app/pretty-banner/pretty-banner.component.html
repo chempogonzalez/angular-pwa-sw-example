@@ -1,9 +1,15 @@
-<span> Add to <strong>My Applications</strong></span>
+<span 
+    class="close" 
+    (click)="closeBanner()"
+> x </span>
+<span class="label"> Add to <strong>My Applications</strong></span>
+
 <button 
     class="p-button" 
     (click)="installApp()"
->Add</button>
+> Add </button>
 
-<p *ngIf="customError"
+<p 
+    *ngIf="customError"
     class="animated fadeInRight custom-error"
->{{customError}}</p>
+> {{ customError }} </p>

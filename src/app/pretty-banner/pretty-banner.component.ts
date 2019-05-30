@@ -1,18 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-pretty-banner',
   templateUrl: './pretty-banner.component.html',
   styleUrls: ['./pretty-banner.component.scss'],
-// tslint:disable-next-line: use-host-property-decorator
-  host: {class: 'animated fadeInUp'}
 })
 export class PrettyBannerComponent implements OnInit {
 
   @Output() installed = new EventEmitter<boolean>();
+  @HostBinding('class') hostClass = 'animated fadeInUp';
 
   deferredPrompt: any;
   customError: string;
+  
 
   constructor() { }
 
@@ -59,6 +59,10 @@ export class PrettyBannerComponent implements OnInit {
         this.customError = '';
       },      4500);
     }
+  }
+
+  closeBanner(){
+    this.hostClass = 'animated fadeOutDown';
   }
 
 }
