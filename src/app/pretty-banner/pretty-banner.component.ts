@@ -12,7 +12,7 @@ export class PrettyBannerComponent implements OnInit {
 
   deferredPrompt: any;
   customError: string;
-  
+
 
   constructor() { }
 
@@ -64,7 +64,7 @@ export class PrettyBannerComponent implements OnInit {
   /**
    * @description Change the host class value to animate it with a fadeOutDown
    */
-  closeBanner(){
+  closeBanner() {
     this.hostClass = 'animated fadeOutDown';
   }
 
